@@ -1,37 +1,16 @@
+execute pathogen#infect()
 syntax on
+set number
+filetype plugin indent on
+let g:CommandTMaxFiles=400000
 
-" tab for traversing multiple files
-nnoremap <Tab> :tabnext<CR>
-nnoremap <S-Tab> :tabprevious<CR>
+" Navigating splits
+map <Leader>h <C-w>h
+map <Leader>j <C-w>j
+map <Leader>k <C-w>k
+map <Leader>l <C-w>l
 
-" filetype plugins
-filetype indent on
-filetype plugin on
+" NERDTreeToggle
+noremap <silent> t :NERDTreeToggle<CR>
 
-" Set to auto read when a file is changed from the outside
-set autoread
-
-" Ignore compiled files
-set wildignore=*.o,*~,*.pyc
-
-" Set 7 lines to the cursor - when moving vertically using j/k
-set so=7
-
-" Fast saving
-nmap <leader>w :w!<cr>
-
-"Always show current position
-set ruler
-
-" Turn on the WiLd menu
-set wildmenu
-
-" Use spaces instead of tabs
-set expandtab
-
-" Be smart when using tabs ;)
-set smarttab
-
-" 1 tab == 4 spaces
-set shiftwidth=4
-set tabstop=4
+colorscheme yuejiu 

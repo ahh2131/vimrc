@@ -7,6 +7,9 @@ let g:CommandTMaxFiles=400000
 set autochdir
 set noswapfile
 
+" FZF (requires brew installation first)
+" If installed using Homebrew
+set rtp+=/usr/local/opt/fzf
 
 " Ctrl-P
 set runtimepath^=~/.vim/bundle/ctrlp.vim

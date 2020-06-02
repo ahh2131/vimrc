@@ -7,6 +7,7 @@ let g:CommandTMaxFiles=400000
 set autochdir
 set noswapfile
 
+set tabstop=2 shiftwidth=2 expandtab
 
 " FZF (requires brew installation first)
 " If installed using Homebrew
@@ -19,11 +20,14 @@ function! FZFOpen(command_str)
   exe 'normal! ' . a:command_str . "\<cr>"
 endfunction
 
+
 nnoremap <silent> <C-b> :call FZFOpen(':Buffers')<CR>
-nnoremap <silent> <C-g>g :call FZFOpen(':Ag')<CR>
+"nnoremap <silent> <C-g>g :call FZFOpen(':GFiles')<CR>
 nnoremap <silent> <C-g>c :call FZFOpen(':Commands')<CR>
 nnoremap <silent> <C-g>l :call FZFOpen(':BLines')<CR>
 nnoremap <silent> <C-p> :call FZFOpen(':Files')<CR>
+
+nnoremap <silent> <expr> <leader>f (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":GFiles\<CR>"
 
 
 " Ctrl-P
@@ -41,7 +45,8 @@ map <Leader>l <C-w>l
 " NERDTreeToggle
 noremap <silent> t :NERDTreeToggle<CR>
 
+
 " NERDTreeFind
-nmap <Leader>f :NERDTreeFind<CR>
+nmap <Leader>nf :NERDTreeFind<CR>
 
 colorscheme fantasy
